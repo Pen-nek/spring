@@ -1,0 +1,116 @@
+package model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class UserDBBean {
+	static final String driver = "com.mysql.cj.jdbc.Driver";	// static(정적) final(상수)로 선언. 내용을 바꾸지 못하게 만드는 것
+	static final String url = "jdbc:mysql://localhost:3306/simplemvc?serverTimezone=UTC";
+	static final String userid = "root";
+	static final String userpw = "1234";
+	
+	static Connection conn = null;
+	static PreparedStatement pstmt = null;
+	static ResultSet rs = null;
+	
+	// ok) 1. DBConnect, DBClose는 메소드로 분리
+	// ok) 2. DB접속해제 부분을 제외하고는 searchUser로 분리
+	/* ok) InsertUser 메소드를 추가
+	 * index.jsp 에서  controller가 가지고 있는 회원정보를 받아와서
+	 * DB에 넘겨주는 부분으로 추가 insert into member (?, ?, ?) ->
+	 * user.getFirstname(), user.getLastname(), user.getEmail()
+	 */
+	// 3. Search한 결과를 result.jsp에 출력되도록 함.
+	
+	
+	public static void main(String[] args) throws SQLException {
+	
+		DBConnect();
+		
+		searchUser();
+		
+		DBClose();
+		
+	}// end of main()
+	
+	
+	//1. DB 접속
+	public static void DBConnect() {
+		System.out.println("DB 접속 : ");
+		try {
+			Class.forName(driver);	// driver 연결
+			conn = DriverManager.getConnection(url, userid, userpw);
+			if(conn != null) System.out.println("드라이버 연결 성공");
+			else System.out.println("드라이버 연결 실패");
+			
+		} catch (ClassNotFoundException e) {
+			System.out.println("ClassNotFoundException");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.out.println("SQLException");
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static UserDataBean searchUser() {
+		//2. PreparedStatement 문 준비 -> 쿼리전송
+		String sql = "select * from member";		// 쿼리문 생성
+		String firstname = null;
+		String lastname = null;
+		String email = null;
+		UserDataBean user = null
+		
+		try {
+			pstmt = conn.prepareStatement(sql);		// 쿼리문 실행
+		//3. ResultSet 받기
+			rs = pstmt.executeQuery();
+		//4. ResultSet 결과물 출력 -> rs.getString()
+			while(rs.next()) {
+				firstname = rs.getString("firstname");
+				lastname = rs.getString("lastname");
+				email = rs.getString("email");
+			}
+			
+			user = new UserDataBean(firstname, lastname, email);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return user;
+	}
+	
+	public static void insertUser() {
+		//2. PreparedStatement 문 준비 -> 쿼리전송
+		String sql = "insert into member values (?, ?, ?)";		// 쿼리문 생성
+		try {
+			// pstmt = conn.prepareStatement(sql);		// 쿼리문 실행
+
+			//3. 처리된 줄 수 받기
+			int num = pstmt.executeUpdate();
+			
+			//4. 처리된 줄 수 출력
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+	}
+	
+	//5. PreparedStatement, ResultSet, Conn 해제(닫기)
+	public static void DBClose() {
+		if (conn == null) {
+			try {
+				pstmt.close();
+				rs.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}// end of UserDBBean

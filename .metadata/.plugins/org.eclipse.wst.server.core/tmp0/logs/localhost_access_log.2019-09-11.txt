@@ -1,0 +1,14 @@
+127.0.0.1 - - [11/Sep/2019:11:52:58 +0900] "GET / HTTP/1.1" 404 1115
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:11:52:59 +0900] "GET /simpleMVC/index.jsp HTTP/1.1" 200 384
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:11:52:59 +0900] "GET /favicon.ico HTTP/1.1" 404 1126
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:12:00:16 +0900] "POST /simpleMVC/controller HTTP/1.1" 200 215
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:14:23:37 +0900] "GET /simpleMVC/index.jsp HTTP/1.1" 200 384
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:14:23:37 +0900] "GET /favicon.ico HTTP/1.1" 404 1126
+127.0.0.1 - - [11/Sep/2019:15:03:16 +0900] "GET / HTTP/1.1" 404 1115
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:15:03:17 +0900] "GET /simpleMVC/WEB-INF/classes/model/UserDBBean.java HTTP/1.1" 200 148
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:15:03:17 +0900] "GET /simpleMVC/WEB-INF/classes/model/notfound.jpg HTTP/1.1" 200 148
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:15:03:17 +0900] "GET /favicon.ico HTTP/1.1" 404 1126
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:15:08:02 +0900] "GET /simpleMVC/WEB-INF/classes/model/UserDBBean.java HTTP/1.1" 200 148
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:15:08:02 +0900] "GET /simpleMVC/WEB-INF/classes/model/notfound.jpg HTTP/1.1" 200 148
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:15:11:01 +0900] "GET /simpleMVC/WEB-INF/classes/model/UserDBBean.java HTTP/1.1" 200 148
+0:0:0:0:0:0:0:1 - - [11/Sep/2019:15:11:01 +0900] "GET /simpleMVC/WEB-INF/classes/model/notfound.jpg HTTP/1.1" 200 148
