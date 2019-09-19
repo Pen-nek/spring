@@ -168,7 +168,7 @@
 		     	 	/> 
 		    -->
 		
-      </Host>
+      <Context docBase="ex00" path="/controller" reloadable="true" source="org.eclipse.jst.jee.server:ex00"/></Host>
     </Engine>
   </Service>
 </Server>

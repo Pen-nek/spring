@@ -168,7 +168,7 @@
 		     	 	/> 
 		    -->
 		
-      </Host>
+      <Context docBase="D:\Github\spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ex00" path="/controller" reloadable="true" source="org.eclipse.jst.jee.server:ex00"/></Host>
     </Engine>
   </Service>
 </Server>
