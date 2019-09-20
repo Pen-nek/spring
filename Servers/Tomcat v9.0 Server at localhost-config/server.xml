@@ -155,7 +155,7 @@
 			
 		    <Context docBase="shoppingmall" path="/shoppingmall" reloadable="true" source="org.eclipse.jst.jee.server:shoppingmall"/> -->
 		    
-		    <Context docBase="simpleMVC" path="/simpleMVC" reloadable="true" source="org.eclipse.jst.jee.server:simpleMVC"/>
+		    
 		    
 			<!-- 	<Resource auth="Container"
 		      		driveClassName="com.mysql.jdbc.Driver"
@@ -168,7 +168,7 @@
 		     	 	/> 
 		    -->
 		
-      <Context docBase="ex00" path="/controller" reloadable="true" source="org.eclipse.jst.jee.server:ex00"/></Host>
+      <Context docBase="ex01" path="/" reloadable="true" source="org.eclipse.jst.jee.server:ex01"/></Host>
     </Engine>
   </Service>
 </Server>
