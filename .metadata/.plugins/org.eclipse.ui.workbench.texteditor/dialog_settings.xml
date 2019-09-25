@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="BoardService"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="boardservice"/>
+			<item value="d"/>
+			<item value="scope&gt;runtime"/>
+			<item value="scope"/>
+			<item value="maven-compiler"/>
+			<item value="servlet-api"/>
+			<item value="junit"/>
 			<item value="***"/>
 			<item value="sample"/>
 			<item value="&quot;info&quot;"/>
@@ -16,13 +23,6 @@
 			<item value="info"/>
 			<item value="driverclass"/>
 			<item value="hikari"/>
-			<item value="dependency"/>
-			<item value="인코딩"/>
-			<item value="인ㄱ코딩"/>
-			<item value="init"/>
-			<item value="servletCon"/>
-			<item value="getins"/>
-			<item value="ins"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&quot;debug&quot;"/>
