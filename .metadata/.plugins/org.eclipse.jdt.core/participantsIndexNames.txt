@@ -31,6 +31,8 @@ D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\289247933
 \shoppingmall\src
 D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2462044942.index
 \loginMVC\src
+D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2694948808.index
+\ex02\src\main\java
 D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1649153840.index
 \board01\src\main\java
 D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3074233535.index
