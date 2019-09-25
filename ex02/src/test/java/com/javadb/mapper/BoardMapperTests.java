@@ -56,7 +56,7 @@ public class BoardMapperTests {
 	public void testRead() {
 		
 		// 존재하는 게시물 번호로 테스트
-		BoardVO board = mapper.read(5L);
+		BoardVO board = mapper.read(1L);
 		
 		log.info(board);
 	}
