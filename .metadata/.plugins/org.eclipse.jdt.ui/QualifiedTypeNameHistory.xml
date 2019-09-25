@@ -19,8 +19,6 @@
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Select"/>
 <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
-<fullyQualifiedTypeName name="org.springframework.test.context.ContextConfiguration"/>
-<fullyQualifiedTypeName name="org.springframework.test.context.junit4.SpringJUnit4ClassRunner"/>
 <fullyQualifiedTypeName name="com.javadb.mapper.TimeMapper"/>
 <fullyQualifiedTypeName name="lombok.Setter"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
@@ -32,13 +30,20 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="lombok.Data"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.javadb.domain.SampleDTOList"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.WebDataBinder"/>
 <fullyQualifiedTypeName name="org.springframework.beans.propertyeditors.CustomDateEditor"/>
 <fullyQualifiedTypeName name="org.springframework.format.annotation.DateTimeFormat"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="org.springframework.test.context.junit4.SpringJUnit4ClassRunner"/>
+<fullyQualifiedTypeName name="org.springframework.test.context.ContextConfiguration"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="com.javadb.service.BoardServiceImpl"/>
+<fullyQualifiedTypeName name="com.javadb.domain.BoardVO"/>
+<fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="com.javadb.service.BoardService"/>
 </qualifiedTypeNameHistroy>
