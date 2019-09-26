@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="BoardService"/>
+		<item key="selection" value="panel-heading"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="boardservice"/>
-			<item value="d"/>
-			<item value="scope&gt;runtime"/>
-			<item value="scope"/>
-			<item value="maven-compiler"/>
-			<item value="servlet-api"/>
-			<item value="junit"/>
-			<item value="***"/>
-			<item value="sample"/>
-			<item value="&quot;info&quot;"/>
-			<item value="log4j"/>
-			<item value="ex01"/>
-			<item value="info"/>
-			<item value="driverclass"/>
-			<item value="hikari"/>
+			<item value="panel-heading"/>
+			<item value="result"/>
+			<item value="modal fade"/>
+			<item value="modal"/>
+			<item value="sidebar-nav"/>
+			<item value="sidebar"/>
+			<item value="dataTables-example"/>
+			<item value="page-wrapper"/>
+			<item value="script src=&quot;"/>
+			<item value=".js"/>
+			<item value="js"/>
+			<item value="link href=&quot;"/>
+			<item value="css"/>
+			<item value="link href"/>
+			<item value="link"/>
 		</list>
 		<list key="replacehistory">
+			<item value="resources/css"/>
+			<item value="/resources/"/>
 			<item value="&quot;debug&quot;"/>
 			<item value="debug"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="824"/>
-		<item key="DIALOG_Y_ORIGIN" value="268"/>
+		<item key="DIALOG_X_ORIGIN" value="1041"/>
+		<item key="DIALOG_Y_ORIGIN" value="232"/>
 		<item key="DIALOG_WIDTH" value="288"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

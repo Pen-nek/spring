@@ -61,7 +61,4 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.delete(bno) == 1;
 	}
 
-
-	//spring 4.3 이상에서 자동 처리
-
 }

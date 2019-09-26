@@ -51,9 +51,13 @@ D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\514356456
 \loginMVC\src
 D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\330741632.index
 \simpleMVC\src
+D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1206470954.index
+\ex02\src\main\java
 D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1121464997.index
 \shoppingmall\src
 D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1099744361.index
 \(ÀÌÇý¹Î) simpleMVC_war\src
 D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\805836054.index
 \board\src\main\java
+D:\Github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\755943323.index
+\ex02\src\main\java
