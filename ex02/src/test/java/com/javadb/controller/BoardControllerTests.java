@@ -46,6 +46,16 @@ public class BoardControllerTests {
 //				.getModelAndView()
 //				.getModel());
 //	}
+	
+	@Test
+	public void testListPaging() throws Exception {
+		
+		log.info(mockMvc.perform
+				(MockMvcRequestBuilders.get("/board/list")
+				.param("pageNum", "2")
+				.param("amount", "30"))
+				.andReturn().getModelAndView().getModelMap());
+	}
 //	
 //	@Test
 //	public void testRegister() throws Exception {
@@ -83,15 +93,16 @@ public class BoardControllerTests {
 //		log.info(resultPage);
 //	}
 	
-	@Test
-	public void testRemove() throws Exception {
-		
-		// 삭제 전 DB에 게시물 번호 있나 확인할 것
-		String resultPage = mockMvc
-				.perform(MockMvcRequestBuilders.post("/board/remove")
-				.param("bno", "11"))
-		.andReturn().getModelAndView().getViewName();
-		
-		log.info(resultPage);
-	}
+//	@Test
+//	public void testRemove() throws Exception {
+//		
+//		// 삭제 전 DB에 게시물 번호 있나 확인할 것
+//		String resultPage = mockMvc
+//				.perform(MockMvcRequestBuilders.post("/board/remove")
+//				.param("bno", "11"))
+//		.andReturn().getModelAndView().getViewName();
+//		
+//		log.info(resultPage);
+//	}
+	
 }

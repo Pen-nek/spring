@@ -33,7 +33,7 @@
                                </tr>
                            </thead>
                            
-                           <c:forEach items="${list}" var="board">
+                           <c:forEach items="${list}" var="board">		<!-- BoardController에서 list라는 이름으로 넘겨받은 변수 -->
 	                           <tr>
 		                           	<td><c:out value="${board.bno}"/></td>
 		                           	<td><a href='/board/get?bno=<c:out value="${board.bno}"/>'><c:out value="${board.title}"/></a></td>
