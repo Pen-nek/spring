@@ -22,4 +22,6 @@ public interface BoardMapper {		// 상세내용들은 src/main/resources/com/jav
 	public int delete(Long bno);
 	
 	public int update(BoardVO board);
+	
+	public int getTotalCount(Criteria cri);
 }

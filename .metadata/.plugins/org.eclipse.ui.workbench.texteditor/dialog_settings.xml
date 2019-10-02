@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=":after"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="search"/>
+			<item value="testsearch"/>
+			<item value="boardsearch"/>
+			<item value="move"/>
+			<item value="move3"/>
 			<item value=":after"/>
 			<item value="glyphi"/>
 			<item value="gly"/>
@@ -18,11 +23,6 @@
 			<item value="f104"/>
 			<item value=":before"/>
 			<item value="boardcontroller"/>
-			<item value="boardmapper"/>
-			<item value="boardmappertests"/>
-			<item value="madang"/>
-			<item value="servlet-api"/>
-			<item value="panel-heading"/>
 		</list>
 		<list key="replacehistory">
 			<item value="resources/css"/>
