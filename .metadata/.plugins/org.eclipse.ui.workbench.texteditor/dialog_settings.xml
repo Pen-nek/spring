@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="UserDatabase"/>
 			<item value="search"/>
 			<item value="testsearch"/>
 			<item value="boardsearch"/>
@@ -22,7 +23,6 @@
 			<item value="previous"/>
 			<item value="f104"/>
 			<item value=":before"/>
-			<item value="boardcontroller"/>
 		</list>
 		<list key="replacehistory">
 			<item value="resources/css"/>
