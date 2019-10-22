@@ -12,68 +12,94 @@
    </div>
    <!-- /.row -->
    
-   <div class="row">
-       <div class="col-lg-12">
-           <div class="panel panel-default">
-               <div class="panel-heading">
-               		Board List Page
-               		<button id="regBtn" type="button" class="btn btn-xs pull-right">새 글 쓰기</button>
-               </div>
-               <!-- /.panel-heading -->
-               <div class="panel-body">
-                   <div class="table-responsive">
-                       <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                           <thead>
-                               <tr>
-                                   <th>#번호</th>
-                                   <th>제목</th>
-                                   <th>작성자</th>
-                                   <th>작성일</th>
-                                   <th>수정일</th>
-                               </tr>
-                           </thead>
-                           
-                           <c:forEach items="${list}" var="board">		<!-- BoardController에서 list라는 이름으로 넘겨받은 변수 -->
-	                           <tr>
-		                           	<td><c:out value="${board.bno}"/></td>
-		                           	<td><a href='/board/get?bno=<c:out value="${board.bno}"/>'><c:out value="${board.title}"/></a></td>
-		                           	<td><c:out value="${board.writer}"/></td>
-		                           	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}"/></td>
-		                           	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}"/></td>
-	                           </tr>
-                           </c:forEach>
-                       </table>
-                       <!-- table 끝 -->
-                       
-                       <!-- Modal 추가 -->
-                       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-laballedby="myModalLabel" aria-hidden="true">
-                       		<div class="modal-dialog">
-                       			<div class="modal-content">
-                       				<div class="modal-header">
-                       					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                       					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                       				</div>
-	                       			<div class="modal-body">처리가 완료되었습니다.</div>
-    	                   			<div class="modal-footer">
-    	                   				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    	                   				<button type="button" class="btn btn-primary">Save changes</button>
-    	                   			</div>
-                       			</div>
-                       			<!-- /.modal-content -->
-                       		</div>
-                       		<!-- /.modal-dialog -->
-                       </div>
-                       <!-- /.end modal -->
-                       
-                   </div>
-               </div>
-               <!-- /.end panel-body -->
-           </div>
-           <!-- /.end panel -->
-       </div>
-       <!-- /.col-lg-12 -->
-   </div>
-   <!-- /.row -->
+	<div class="row">
+	    <div class="col-lg-12">
+	        <div class="panel panel-default">
+	            <div class="panel-heading">
+	            		Board List Page
+	            		<button id="regBtn" type="button" class="btn btn-xs pull-right">새 글 쓰기</button>
+	            </div>
+	            <!-- /.panel-heading -->
+	            <div class="panel-body">
+	                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+	                        <thead>
+	                            <tr>
+	                                <th>#번호</th>
+	                                <th>제목</th>
+	                                <th>작성자</th>
+	                                <th>작성일</th>
+	                                <th>수정일</th>
+	                            </tr>
+	                        </thead>
+	                        
+	                        <c:forEach items="${list}" var="board">		<!-- BoardController에서 list라는 이름으로 넘겨받은 변수 -->
+	                         <tr>
+	                          	<td><c:out value="${board.bno}"/></td>
+	                          	<td><a class='move' href='<c:out value="${board.bno}"/>'><c:out value="${board.title}"/></a></td>
+	                          	<td><c:out value="${board.writer}"/></td>
+	                          	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}"/></td>
+	                          	<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate}"/></td>
+	                         </tr>
+	                        </c:forEach>
+	                    </table>
+	                    <!-- table 끝 -->
+	                    
+	                    <div class='pull-right'>
+	                    		<ul class="pagination">
+	                    		
+	                    			<c:if test="${pageMaker.prev}">
+	                    				<li class="paginate_button previous">
+	                    					<a href="pageMaker.startPage -1">Previous</a>
+	                    				</li>
+	                    			</c:if>
+	                    			
+	                    			<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+	                    				<li class="paginate_button ${pageMaker.cri.pageNum == num? "active":""} ">
+	                    					<a href="${num}">${num}</a>
+	                    				</li>
+	                    			</c:forEach>
+	                    			
+	                    			<c:if test="${pageMaker.next}">
+	                    				<li class="paginate_button next">
+	                    					<a href="pageMaker.endPage +1">Next</a>
+	                    				</li>
+	                    			</c:if>
+	                    		</ul>
+	                    </div>
+	                    <!-- end of Pagination -->
+	                    
+	                    <!-- Modal 추가 -->
+	                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-laballedby="myModalLabel" aria-hidden="true">
+	                    		<div class="modal-dialog">
+	                    			<div class="modal-content">
+	                    				<div class="modal-header">
+	                    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                    					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	                    				</div>
+	                     			<div class="modal-body">처리가 완료되었습니다.</div>
+	 	                   			<div class="modal-footer">
+	 	                   				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	 	                   				<button type="button" class="btn btn-primary">Save changes</button>
+	 	                   			</div>
+	                    			</div>
+	                    			<!-- /.modal-content -->
+	                    		</div>
+	                    		<!-- /.modal-dialog -->
+	                    </div>
+	                    <!-- /.end modal -->
+	            </div>
+	            <!-- /.end panel-body -->
+	        </div>
+	        <!-- /.end panel -->
+	    </div>
+	    <!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+   
+	<form id='actionForm' action="/board/list" method='get'>
+		<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
+		<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
+	</form>
    
    <script type="text/javascript">
    		$(document).ready(function() {
@@ -100,6 +126,28 @@
    			$("#regBtn").on("click", function() {
    				self.location ="/board/register";
    			});
+   			
+   			var actionForm = $("#actionForm");						// actionForm이라는 id를 가진 폼을 변수에 저장
+   			
+   			$(".paginate_button a").on("click", function(e) {		// 페이지네이트_버튼 클래스 중 a 태그가 눌렸을 때
+   				
+   				e.preventDefault();									// a 태그의 실행(페이지 이동)을 막아라
+   				
+   				console.log('click');								// 콘솔에 click 이라는 로그를 남겨라
+   				
+   				actionForm.find("input[name='pageNum']").val($(this).attr("href"));	// actionForm에서 input태그의 pageNum 키값을 href 속성값으로 변경  
+   				actionForm.submit();												// actionForm이 제출되게 함
+   				
+   			});
+   			
+  			$(".move").on("click", function(e) {					// 게시물 제목을 클릭했을 때 (클래스 이름은 move임)
+  				
+  				e.preventDefault();									// a태그 실행 (페이지 이동) 막기
+  				actionForm.append("<input type='hidden' name='bno' value='"+$(this).attr("href")+"'>");		// form 맨 뒤에 내용을 추가함
+  				actionForm.attr("action", "/board/get"); 
+  				actionForm.submit();
+  				
+  			});
    		});
    </script>
             
