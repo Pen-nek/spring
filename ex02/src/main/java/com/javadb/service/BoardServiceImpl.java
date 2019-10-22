@@ -30,14 +30,6 @@ public class BoardServiceImpl implements BoardService{
 		mapper.insertSelectKey(board);
 	}
 	
-//	@Override
-//	public List<BoardVO> getList() {
-//		
-//		log.info("getList...............");
-//		
-//		return mapper.getList();
-//	}
-	
 	@Override
 	public List<BoardVO> getList(Criteria cri) {
 		
