@@ -7,7 +7,7 @@
 	<select id="getList" resultType="com.javadb.domain.BoardVO">		<!-- BoardMapper.java 인터페이스의 getList 메소드 내용을 구성한 것임 -->
 		<![CDATA[select * from tbl_board where bno > 0]]>				<!-- CDATA는 XML파일에서 부등호를 사용하기 위한 것임 -->
 	</select>
-	
+
 	<sql id="criteria">
 		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
 			<foreach item='type' collection="typeArr">
@@ -27,53 +27,53 @@
 			</foreach>
 		</trim>
 	</sql>
-	
+
 	<select id="getListWithPaging" resultType="com.javadb.domain.BoardVO">
 		<![CDATA[
 		select
-			bno, title, content, writer, regdate, updatedate 
+			bno, title, content, writer, regdate, updatedate
 		from
 			(
-			select /*+INDEX_DESC(tbl_board pk_board) */ 
-				rownum rn, bno, title, content, writer, regdate, updatedate 
+			select /*+INDEX_DESC(tbl_board pk_board) */
+				rownum rn, bno, title, content, writer, regdate, updatedate
 			from
 				tbl_board
 			where
 		]]>
-		
+
 		<include refid="criteria"></include>
-		
+
 		<![CDATA[
 			rownum <= #{pageNum} * #{amount}
 			)
 		where rn > (#{pageNum} -1) * #{amount}
 		]]>
 	</select>
-	
+
 	<insert id="insert">
 		insert into tbl_board (bno,title,content,writer)
 		values (seq_board.nextval, #{title}, #{content}, #{writer})
 	</insert>
-	
+
 	<insert id="insertSelectKey">
-		
+
 		<selectKey keyProperty="bno" order="BEFORE" resultType="long">
 			select seq_board.nextval from dual
 		</selectKey>
-		
+
 		insert into tbl_board (bno,title,content,writer)
 		values (#{bno}, #{title}, #{content}, #{writer})
-		
+
 	</insert>
-	
+
 	<select id="read" resultType="com.javadb.domain.BoardVO">
 		select * from tbl_board where bno = #{bno}
 	</select>
-	
+
 	<delete id="delete">
 		delete from tbl_board where bno = #{bno}
 	</delete>
-	
+
 	<update id="update">
 		update tbl_board
 		set title = #{title},
@@ -82,13 +82,13 @@
 		updateDate = sysdate
 		where bno = #{bno}
 	</update>
-	
+
 	<select id="getTotalCount" resultType="int">
-		select count(*) from tbl_board 
-		where 
-		
+		select count(*) from tbl_board
+		where
+
 		<include refid="criteria"></include>
-		
+
 		bno > 0
 	</select>
 
