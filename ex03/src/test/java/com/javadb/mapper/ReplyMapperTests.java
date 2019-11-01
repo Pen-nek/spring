@@ -26,28 +26,28 @@ public class ReplyMapperTests {
 	
 	private ReplyMapper mapper;
 	
-	@Test
-	public void testCreate() {
-		
-		IntStream.rangeClosed(1, 10).forEach(i -> {
-			
-			ReplyVO vo = new ReplyVO();
-			
-			//게시물의 번호
-			vo.setBno(bnoArr[i % 5]);
-			vo.setReply("댓글 테스트 " + i);
-			vo.setReplyer("replyer " + i);
-			
-			mapper.insert(vo);
-		});
-	}
-	
+//	@Test
+//	public void testCreate() {
+//		
+//		IntStream.rangeClosed(1, 10).forEach(i -> {
+//			
+//			ReplyVO vo = new ReplyVO();
+//			
+//			//게시물의 번호
+//			vo.setBno(bnoArr[i % 5]);
+//			vo.setReply("댓글 테스트 " + i);
+//			vo.setReplyer("replyer " + i);
+//			
+//			mapper.insert(vo);
+//		});
+//	}
+//	
 //	@Test
 //	public void testMapper() {
 //		
 //		log.info(mapper);
 //	}
-	
+//	
 //	@Test
 //	public void testRead() {
 //		
@@ -58,7 +58,7 @@ public class ReplyMapperTests {
 //		log.info(vo);
 //		
 //	}
-	
+//	
 //	@Test
 //	public void testDelete() {
 //	
@@ -66,7 +66,7 @@ public class ReplyMapperTests {
 //		
 //		mapper.delete(targetRno);
 //	}
-	
+//	
 //	@Test
 //	public void testUpdate() {
 //		
@@ -82,15 +82,15 @@ public class ReplyMapperTests {
 //		
 //	}
 
-//	@Test
-//	public void testList() {		
-//		
-//		Criteria cri = new Criteria();
-//		
-//		// 3145745L
-//		List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
-//		
-//		replies.forEach(reply -> log.info(reply));
-//		
-//	}
+	@Test
+	public void testList() {		
+		
+		Criteria cri = new Criteria();
+		
+		// 3145745L
+		List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
+		
+		replies.forEach(reply -> log.info(reply));
+		
+	}
 }

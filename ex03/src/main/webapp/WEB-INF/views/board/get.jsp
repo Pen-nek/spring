@@ -66,6 +66,7 @@
            
                <div class="panel-heading">
                		<i class="fa fa-comments fa-fw"></i> Reply
+               		<button id='addReplyBtn' class='btn btn-primary btn-xs pull-right'>댓글쓰기</button>
                </div>
                <!-- /.panel-heading -->
                
@@ -94,6 +95,41 @@
    </div>
    <!-- end row -->
    
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">댓글 쓰기</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label>내용</label>
+						<input class="form-control" name='reply' value='새 댓글!!!!'>
+					</div>
+					<div class="form-group">
+						<label>작성자</label>
+						<input class="form-control" name='replyer' value='replyer'>
+					</div>
+					<div class="form-group">
+						<label>작성일</label>
+						<input class="form-control" name='replyDate' value=''>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id='modalModBtn' type="button" class="btn btn-warning">수정</button>
+					<button id='modalRemoveBtn' type="button" class="btn btn-danger">삭제</button>
+					<button id='modalRegisterBtn' type="button" class="btn btn-primary">등록</button>
+					<button id='modalCloseBtn' type="button" class="btn btn-default">닫기</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>	
+	<!-- /.modal -->
+   
 	<script type="text/javascript" src="/resources/js/reply.js"></script>
 	
 	<script type="text/javascript">
@@ -119,7 +155,7 @@
 					for (var i = 0, len = list.length || 0; i < len; i++) {
 						str +="<li class='left clearfix' data-rno='" + list[i].rno + "'>";
 						str +="		<div><div class='header'><strong class='primary-font'>" + list[i].replyer + "</strong>";
-						str +="			<small class='pull-right text-muted'>" + list[i].replyDate + "</small></div>";
+						str +="			<small class='pull-right text-muted'>" + replyService.displayTime(list[i].replyDate) + "</small></div>";
 						str +="			<p>" + list[i].reply + "</p></div></li>";
 					}
 					
@@ -127,6 +163,98 @@
 					
 				}); // end function
 			} // end showList
+			
+			var modal = $(".modal");
+			var modalInputReply = modal.find("input[name='reply']");
+			var modalInputReplyer = modal.find("input[name='replyer']");
+			var modalInputReplyDate = modal.find("input[name='replyDate']");
+			
+			var modalModBtn = $("#modalModBtn");
+			var modalRemoveBtn = $("#modalRemoveBtn");
+			var modalRegisterBtn = $("#modalRegisterBtn");
+			
+			$("#addReplyBtn").on("click", function(e) {
+				
+				modal.find("input").val("");
+				modalInputReplyDate.closest("div").hide();
+				modal.find("button[id != 'modalCloseBtn']").hide();
+				
+				modalRegisterBtn.show();
+				
+				$(".modal").modal("show");
+				
+			});
+			
+			modalRegisterBtn.on("click", function(e) {
+				
+				var reply = {
+						reply: modalInputReply.val(),
+						replyer: modalInputReplyer.val(),
+						bno: bnoValue
+				};
+				replyService.add(reply, function(result) {
+					
+					alert(result);
+					
+					modal.find("input").val("");
+					modal.modal("hide");
+					
+					showList(1);
+					
+				});
+				
+			});
+			
+			// 댓글 조회 클릭 이벤트 처리
+			$(".chat").on("click", "li", function(e) {
+				
+				var rno = $(this).data("rno");
+				
+				replyService.get(rno, function(reply){
+					
+					modalInputReply.val(reply.reply);
+					modalInputReplyer.val(reply.replyer);
+					modalInputReplyDate.val(replyService.displayTime(reply.replyDate)).attr("readonly","readonly");
+					modal.data("rno", reply.rno);
+					
+					modal.find("button[id != 'modalCloseBtn']").hide();
+					modalModBtn.show();
+					modalRemoveBtn.show();
+					
+					$(".modal").modal("show");
+					
+				});
+				
+			});
+			
+			// 댓글 수정
+			modalModBtn.on("click", function(e) {
+				
+				var reply = {rno:modal.data("rno"), reply:modalInputReply.val()};
+				
+				replyService.update(reply, function(result) {
+					
+					alert(result);
+					modal.modal("hide");
+					showList(1);
+					
+				});
+			});
+			
+			// 댓글 삭제
+			modalRemoveBtn.on("click", function(e) {
+				
+				var rno = modal.data("rno");
+				
+				replyService.remove(rno, function(result) {
+					
+					alert(result);
+					modal.modal("hide");
+					showList(1);
+					
+				});
+			});
+			
 		});
 		
 	</script>
